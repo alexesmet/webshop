@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Web Shop</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}" >
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
-    <p th:text="thymleaf">html</p>
+<div id="container">
+    <header class="navbar navbar-expand navbar-dark bg-primary "> <!-- add fixed top -->
+        <div class="navbar-brand mb-0 h1">Web Shop</div> <!-- FIXME: change to href -->
+        <div class="navbar-nav ml-auto">
+            <a href="" class="nav-item nav-link disabled">Shopping Cart</a>
+            <a href="" class="nav-item nav-link disabled">Your Account</a>
+            <a href="" class="nav-item nav-link">Learn more</a>
+            <a class="nav-item">
+                <a href="#" class="nav-link btn-light text-dark ml-2 mr-2 btn-sm">Log in</a>
+            </a>
+        </div>
+    </header>
+    <main>
+
+        <div class="card m-2" style="width: 14rem;">
+            <img src="../static/img/product/notebook.jpg" class="card-img-top" alt="No img">
+            <div class="card-body">
+                <h5 class="card-title">Laptop<span class="badge badge-success ml-1">Sale!</span></h5>
+                <h6 class="card-subtitle mb-2 text-muted">18.69$</h6>
+                <p class="card-text small">Produced by HP</p>
+                <a href="#" class="btn btn-primary">Buy</a>
+                <a href="#" class="card-link pl-2">Add to cart</a>
+            </div>
+        </div>
+
+
+    </main>
+    <footer>
+
+    </footer>
+</div>
 </body>
 </html>
 
