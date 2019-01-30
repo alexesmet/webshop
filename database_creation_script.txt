@@ -1,0 +1,12 @@
+
+
+CREATE TABLE products
+(
+    id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    title varchar(75) NOT NULL,
+    comment varchar(1000),
+    image_path varchar(100),
+    amount int DEFAULT 0 NOT NULL,
+    sale TINYINT(1) DEFAULT 0 NOT NULL,
+    price DECIMAL(9,2) UNSIGNED ZEROFILL DEFAULT 0 NOT NULL
+);

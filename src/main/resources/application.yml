@@ -1,0 +1,12 @@
+spring:
+  thymeleaf:
+    cache: false
+  resources:
+    add-mappings: true
+  application:
+    name: webshop
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/webshop
+    username: root
+    password: root
