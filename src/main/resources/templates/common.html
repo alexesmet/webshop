@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TEMPLATE LAYOUTS</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<body style="overflow-x: hidden;">
+
+    <header th:fragment="header" class="navbar navbar-expand navbar-dark bg-primary ">
+        <div class="navbar-brand mb-0 h1">Web Shop</div> <!-- FIXME: change to href -->
+        <div class="navbar-nav ml-auto">
+            <a href="" class="nav-item nav-link disabled">Shopping Cart</a>
+            <a href="" class="nav-item nav-link disabled">Your Account</a>
+            <a href="" class="nav-item nav-link">Learn more</a>
+            <div class="nav-item">
+                <a href="#" class="nav-link btn-light text-dark ml-2 btn mt-1 pt-1 pb-1">Log in</a>
+            </div>
+        </div>
+    </header>
+
+</body>
+</html>

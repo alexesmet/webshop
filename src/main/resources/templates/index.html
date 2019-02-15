@@ -8,54 +8,44 @@
 </head>
 <body style="overflow-x: hidden;">
 <div id="container">
-    <header class="navbar navbar-expand navbar-dark bg-primary "> <!-- add fixed top -->
-        <div class="navbar-brand mb-0 h1">Web Shop</div> <!-- FIXME: change to href -->
-        <div class="navbar-nav ml-auto">
-            <a href="" class="nav-item nav-link disabled">Shopping Cart</a>
-            <a href="" class="nav-item nav-link disabled">Your Account</a>
-            <a href="" class="nav-item nav-link">Learn more</a>
-            <div class="nav-item">
-                <a href="#" class="nav-link btn-light text-dark ml-2 btn mt-1 pt-1 pb-1">Log in</a>
-            </div>
-        </div>
+    <header th:replace="common :: header">
+        <!-- To see header, refer to common.html -->
     </header>
-    <main>
-        <div class="row justify-content-center">
-            <div class="col col-xl-8 jus">
-                <div class="row justify-content-center">
-                    <div class="col-sm-auto"> <!-- fixme: effect: auto works when less then 1 row -->
-                        <!-- Fixme: set heght -->
-                        <div th:each="prod : ${products}" class="card m-2 float-left" style="width: 15rem; ">
+    <main class="row justify-content-center">
+        <div class="col col-xl-8">
+            <div class="row justify-content-center">
+                <div class="col-sm-auto"> <!-- fixme: effect: auto works when less then 1 row -->
+                    <!-- Fixme: set height -->
+                    <div th:each="prod : ${products}" class="card m-2 float-left" style="width: 15rem; ">
 
-                            <img th:src=" ${prod.image}"
-                                 src="../static/img/product/notebook.jpg"
-                                 class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <span th:text="${prod.title}">Laptopus</span>
-                                    <span th:if="${prod.sale}" class="badge badge-success">Sale!</span>
-                                    <span th:if="${prod.amount <= 0}" class="badge badge-danger">Sold</span>
-                                </h5>
-                                <h6 th:text="${prod.priceString}" class="card-subtitle mb-2 text-muted">18.69$</h6>
-                                <!-- Todo: multiline text-truncate -->
-                                <p th:text="${prod.comment}" style="height: 2.5rem;" class="card-text small text-justify overflow-hidden">
-                                    Produced by HP. This text is extremely large just in case you wanted to test the overflow
-                                    option. Do not read this text, just do your work
-                                </p>
-                                <a th:href="@{'/products/' + ${prod.id}}"
-                                   th:class="${prod.amount > 0} ? 'btn btn-primary' : 'btn btn-primary disabled'"
-                                   href="#"
-                                   class="btn btn-primary">Buy</a>
-                                <a href="#" class="card-link pl-2 ">Add to cart</a>
-                            </div>
+                        <img th:src="'image/' + ${prod.image}"
+                             src="https://gloimg.gbtcdn.com/soa/gb/pdm-product-pic/Electronic/2017/09/25/goods_img_big-v1/20170925121833_25721.jpg"
+                             class="card-img-top"
+                             alt="product img"
+                             style="width: 100% \9;">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <span th:text="${prod.title}">Laptopus</span>
+                                <span th:if="${prod.sale}" class="badge badge-success">Sale!</span>
+                                <span th:if="${prod.amount <= 0}" class="badge badge-danger">Sold</span>
+                            </h5>
+                            <h6 th:text="${prod.priceString}" class="card-subtitle mb-2 text-muted">18.69$</h6>
+                            <!-- Todo: multiline text-truncate -->
+                            <p th:text="${prod.comment}" style="height: 2.5rem;"
+                               class="card-text small text-justify overflow-hidden">
+                                Produced by HP. This text is extremely large just in case you wanted to test the
+                                overflow
+                                option. Do not read this text, just do your work
+                            </p>
+                            <a th:class="${prod.amount > 0} ? 'btn btn-primary' : 'btn btn-primary disabled'"
+                               href="#"
+                               class="btn btn-primary">Buy</a>
+                            <a th:href="@{'/product/' + ${prod.id}}" class="card-link pl-2 ">Learn more</a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </main>
     <footer>
 

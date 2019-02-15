@@ -12,11 +12,11 @@ import java.math.BigDecimal;
 public class ProductDto implements Dto {
     public Integer id;
     public String title;
-    public String image;
     public String comment;
     public Integer amount;
     public BigDecimal price;
     public boolean sale;
+    public Integer image;
 
     public String getPriceString(){
         return price.toString() + "$";
